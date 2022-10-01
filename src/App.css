@@ -1,0 +1,32 @@
+.active {
+    text-decoration: none;
+    font-weight: bold;
+    color: yellow
+}
+
+a {
+    text-decoration: none;
+    color: white
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 53px
+}
+
+.prod_load_spinner {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 100%;
+    justify-content: center;
+    align-items: center
+}
+
+.not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
