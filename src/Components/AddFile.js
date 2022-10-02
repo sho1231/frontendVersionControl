@@ -119,7 +119,7 @@ const AddFile = () => {
                     console.log("1231212", e.target.value);
                     setBranch(branch);
                 }}>
-                    {oLoading && <option value='' disabled>Please wait while we fetch your branches</option>}
+                    {oLoading && <option value='' selected>Please wait while we fetch your branches</option>}
                     {branches.length !== 0 && <option value=''>Select your branch</option>}
                     {branches.length !== 0 && branches.map((branch, ind) => {
                         if (ind === 0)
