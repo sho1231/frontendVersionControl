@@ -54,6 +54,7 @@ const AddFile = () => {
                     draggable: false,
                     progress: undefined,
                 });
+                setLoading(false);
                 return;
             }
             const data = await axios({
