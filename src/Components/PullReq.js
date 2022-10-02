@@ -186,14 +186,14 @@ const PullReq = () => {
                 <div className="d-inline-flex">
                     <div className="ms-2">
                         <label>Base Branch:</label>
-                        <select onChange={(e) => getFiles(e.target.value, 1)}>
+                        <select onChange={(e) => getFiles(e.target.value, 1)} disabled={fLoading?true:false}>
                             <option value="" disabled={bLoading || bError ? true : false}>{bError ? "something went wrong" : "Select base branch"}</option>
                             {branches && branches.length !== 0 && branches.map((branch) => <option key={branch._id} value={branch.name}>{branch.name}</option>)}
                         </select>
                     </div>
                     <div className="ms-2">
                         <label>Compare Branch:</label>
-                        <select onChange={(e) => getFiles(e.target.value, 2)}>
+                        <select onChange={(e) => getFiles(e.target.value, 2)} disabled={fLoading?true:false}>
                             <option value="" disabled={bLoading || bError ? true : false}>{bError ? "something went wrong" : "Select compare branch"}</option>
                             {branches && branches.length !== 0 && branches.map((branch) => <option key={branch._id} value={branch.name}>{branch.name}</option>)}
                         </select>

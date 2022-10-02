@@ -128,7 +128,7 @@ const AddFile = () => {
                 </select>
             </div>
             <div className="mt-3">
-                <button type="button" onClick={uploadFile} className='btn btn-secondary'>upload</button>
+                <button type="button" onClick={uploadFile} className='btn btn-secondary' disabled={loading?true:false}>{loading?"Please wait..":"Submit"}</button>
             </div>
             <ToastContainer />
         </div>
