@@ -95,7 +95,7 @@ const PullReq = () => {
 
     function filediffviewer() {
         console.log(231);
-        console.log(baseBranchFiles, compareBranchFiles);
+        // console.log(baseBranchFiles, compareBranchFiles);
         if (baseBranchFiles && baseBranchFiles.length !== 0 && compareBranchFiles && compareBranchFiles.length !== 0) {
             cFiles.splice(0, cFiles.length);
             console.log(123);

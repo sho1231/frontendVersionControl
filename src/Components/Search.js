@@ -12,16 +12,9 @@ const Search = () => {
     let [loading, setLoading] = useState(false);
     let [error, setError] = useState(false);
     async function getRepos(q = '') {
-        console.log(123);
+        console.log(123,q.length);
         try {
             setLoading(true);
-            if (q === '') {
-                console.log("123", 1);
-                repos.splice(0, repos.length);
-                console.log(repos);
-                setRepos(repos);
-            }
-            else {
                 const data = await axios.request({
                     method: "GET",
                     url: `${url}/repo/search?q=${q}`,
@@ -31,7 +24,7 @@ const Search = () => {
                 })
                 repos = data.data;
                 setRepos(repos);
-            }
+            
             setLoading(false);
         }
         catch (e) {
@@ -47,9 +40,14 @@ const Search = () => {
     }, [])
     return (
         <div className="container-fluid m-2">
+            {console.log("Rendered",repos)}
             <div>
                 <input className="form-control" type="text" onChange={(e) => {
-                    console.log(e.target.value);
+                    if(e.target.value.length===0){
+                        console.log("Empty")
+                        setRepos([]);
+                    }
+                    else
                     getRepos(e.target.value);
                 }} placeholder="Enter repo name..." />
             </div>
