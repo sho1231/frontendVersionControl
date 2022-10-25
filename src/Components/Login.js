@@ -31,10 +31,13 @@ function Login() {
         try {
             setLoading(true);
             const data = await axios.post({
-                method:"post",
-                url:`${url}/auth/login`,
-                data:values,
-                withCredentials: true,
+                method: "post",
+                url: `${url}/auth/login`,
+                data: values,
+                withCredentials: false,
+                headers: {
+                    "Content-Type": "application/json"
+                }
             })
             localStorage.setItem("token", data.data.token);
             navigate("/yourrepo");
