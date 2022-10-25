@@ -33,6 +33,7 @@ function Login() {
             const data = await axios.post({
                 method:"post",
                 url:`${url}/auth/login`,
+                data:values,
                 withCredentials: true,
             })
             localStorage.setItem("token", data.data.token);
