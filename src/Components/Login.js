@@ -34,7 +34,6 @@ function Login() {
                 method: "post",
                 url: `${url}/auth/login`,
                 data: values,
-                withCredentials: false,
                 headers: {
                     "Content-Type": "application/json"
                 }
