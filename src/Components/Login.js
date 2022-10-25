@@ -30,14 +30,7 @@ function Login() {
     async function authUser(values) {
         try {
             setLoading(true);
-            const data = await axios.post({
-                method: "post",
-                url: `${url}/auth/login`,
-                data: values,
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
+            const data = await axios.post(`${url}/auth/login`, values);
             localStorage.setItem("token", data.data.token);
             navigate("/yourrepo");
             setLoading(false);
