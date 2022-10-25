@@ -43,12 +43,13 @@ const Search = () => {
             {console.log("Rendered",repos)}
             <div>
                 <input className="form-control" type="text" onChange={(e) => {
+                    console.log(e.target.value.length===0);
                     if(e.target.value.length===0){
                         console.log("Empty")
                         setRepos([]);
                     }
                     else
-                    getRepos(e.target.value);
+                      getRepos(e.target.value);
                 }} placeholder="Enter repo name..." />
             </div>
             {loading && <LoadingIcon />}
