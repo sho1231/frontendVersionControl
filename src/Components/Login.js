@@ -30,7 +30,7 @@ function Login() {
     async function authUser(values) {
         try {
             setLoading(true);
-            const data = await axios.post(`${url}/auth/login`, values,{withCredentials: false});
+            const data = await axios.post(`${url}/auth/login`, values, { withCredentials: false });
             localStorage.setItem("token", data.data.token);
             navigate("/yourrepo");
             setLoading(false);
@@ -38,15 +38,20 @@ function Login() {
         catch (e) {
             setLoading(false);
             console.log(e);
-            toast.error(e.response.data.message, {
-                position: "top-center",
-                autoClose: 4000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                progress: undefined,
-            });
+            try {
+                toast.error(e.response.data.message, {
+                    position: "top-center",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                });
+            }
+            catch (e) {
+                alert('something went wrong..please refresh the page');
+            }
         }
     }
     return (

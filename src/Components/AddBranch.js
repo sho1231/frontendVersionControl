@@ -54,15 +54,20 @@ export default function Register() {
         catch (e) {
             setLoading(false);
             console.log(e);
-            toast.error(e.response.data.message, {
-                position: "top-center",
-                autoClose: 4000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                progress: undefined,
-            });
+            try {
+                toast.error(e.response.data.message, {
+                    position: "top-center",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                });
+            }
+            catch (e) {
+                alert('something went wrong..please refresh the page');
+            }
         }
     }
 
